@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from blog.models import *
-from .forms import CommentForm, ContactForm
+from .forms import CommentForm, ContactForm, BlogForm
 
 # Create your views here.
 def index(request):
@@ -68,3 +68,20 @@ def contact(request):
     }
 
     return render(request,"page-contact.html",context )
+
+def blog(request):
+    form = BlogForm()
+    if request.method == "POST":
+        form = BlogForm(request.POST)
+        if form.is_valid():
+            post = Post(
+                title=form.cleaned_data["name"],
+                body=form.cleaned_data["body"],
+                image=form.cleaned_data["image"],
+                categories=form.cleaned_data["categories"]
+            )
+            post.save()
+    context = {
+        "form":form
+    }
+    return render(request,'blog.html', context)

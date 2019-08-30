@@ -1,5 +1,6 @@
 from django import forms
 from phonenumber_field.formfields import PhoneNumberField
+from .models import Post, Category
 
 
 class CommentForm(forms.Form):
@@ -52,3 +53,15 @@ class ContactForm(forms.Form):
                 "placeholder":"Leave a message!"
             })
     )
+
+
+class BlogForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = '__all__'
+    def __init__ (self, *args, **kwargs):
+        super(BlogForm, self).__init__(*args, **kwargs)
+        self.fields["categories"].widget = forms.widgets.CheckboxSelectMultiple()
+        self.fields["categories"].help_text = "Choose categories..."
+        self.fields["categories"].queryset = Category.objects.all()
+    

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_blog %}
+<script src="{% static 'js/tinymce/tinymce.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/tinymce/custom.js' %}" ></script>
+{% endblock %}
+
+{% block page_content %}
+<form name="contactForm" id="contactForm" method="post" action="write" autocomplete="off">
+    {% csrf_token %}
+    <fieldset>
+
+        <div class="form-group">
+            {{form.title}}
+        </div>
+
+        <div class="form-field">
+            {{form.body}}
+        </div>
+
+        <div class="message form-field">
+            {{form.image}}
+        </div>
+        <div class="message form-field">
+                {{form.categories}}
+        </div>
+
+        <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Submit" type="submit">
+
+    </fieldset>
+ </form> 
+{% endblock %}
