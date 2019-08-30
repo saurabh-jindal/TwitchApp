@@ -6,7 +6,7 @@
     {% block page_blog %}
     {% endblock %}
 
-    <!--- basic page needs
+
     ================================================== -->
     <meta charset="utf-8">
     <title>Typerite</title>
@@ -63,25 +63,9 @@
                     </a>
                 </div>
 
-                <!-- <div class="header__search">
-    
-                    <form role="search" method="get" class="header__search-form" action="#">
-                        <label>
-                            <span class="hide-content">Search for:</span>
-                            <input type="search" class="header__search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
-                        </label>
-                        <input type="submit" class="header__search-submit" value="Search">
-                    </form>
-        
-                    <a href="#0" title="Close Search" class="header__search-close">Close</a>
-        
-                </div> -->
+                
 
-                <!-- toggles -->
-                <!-- <a href="#0" class="header__search-trigger"></a>
-                <a href="#0" class="header__menu-toggle"><span>Menu</span></a> -->
-
-            </div> <!-- end header__top -->
+            </div>
 
             <nav class="header__nav-wrap">
 
@@ -97,15 +81,7 @@
                         <li><a href="{% url 'category' 'work' %}">Work</a></li>
                         </ul>
                     </li>
-                    <!-- <li class="has-children">
-                        <a href="#0" title="">Blog Posts</a>
-                        <ul class="sub-menu">
-                        <li><a href="single-video.html">Video Post</a></li>
-                        <li><a href="single-audio.html">Audio Post</a></li>
-                        <li><a href="single-gallery.html">Gallery Post</a></li>
-                        <li><a href="single-standard.html">Standard Post</a></li>
-                        </ul>
-                    </li> -->
+                    
                     <li><a href="{% url 'about' %}" title="">About</a></li>
                     <li><a href="{% url 'contact' %}" title="">Contact</a></li>
                 </ul> <!-- end header__nav -->
@@ -162,8 +138,7 @@
     </div> <!-- end s-wrap -->
 
 
-    <!-- Java Script
-    ================================================== -->
+    
     <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
