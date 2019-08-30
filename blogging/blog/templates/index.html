@@ -22,7 +22,7 @@
         
                         <div class="entry__text">
                             <div class="entry__header">
-    
+                                <img src="{{ post.image.url }}" width="350" height="350">
                                 <h2 class="entry__title"><a href="{% url 'detail' post.pk %}">{{ post.title }}</a></h2>
                                 <div class="entry__meta">
                                     <span class="entry__meta-cat">
@@ -40,7 +40,7 @@
                             </div>
                             <div class="entry__excerpt">
                                 <p>
-                                {{ post.body|slice:":200" }}...
+                                {{ post.body|safe|slice:":200" }}...
                                 </p>
                             </div>
                         </div>

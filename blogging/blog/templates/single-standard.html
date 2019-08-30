@@ -35,7 +35,7 @@
                     <div class="entry__content">
 
                         <p class="lead drop-cap">
-                        {{ post.body | linebreaks }}
+                        {{ post.body|safe| linebreaks }}
                         </p>
 
                     <!-- <div class="entry__pagenav">

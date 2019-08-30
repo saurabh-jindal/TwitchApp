@@ -1,11 +1,11 @@
 function djangoFileBrowser(field_name, url, type, win) {
-    var url = "{{ fb_url }}?pop=2&type=" + type;
+    var url = "{{ fb_url }}?pop=4&type=" + type;
 
     tinyMCE.activeEditor.windowManager.open(
         {
             'file': url,
-            'width': 820,
-            'height': 500,
+            'width': 840,
+            'height': 600,
             'resizable': "yes",
             'scrollbars': "yes",
             'inline': "no",
@@ -14,7 +14,7 @@ function djangoFileBrowser(field_name, url, type, win) {
         {
             'window': win,
             'input': field_name,
-            'editor_id': tinyMCE.selectedInstance.editorId
+            'editor_id': tinyMCE.activeEditor.id
         }
     );
     return false;

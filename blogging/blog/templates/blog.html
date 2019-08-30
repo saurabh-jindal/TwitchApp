@@ -3,30 +3,29 @@
 {% block page_blog %}
 <script src="{% static 'js/tinymce/tinymce.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/tinymce/custom.js' %}" ></script>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<link href="{% static 'styles/github.css' %}" rel="stylesheet">
+<script>hljs.initHighlightingOnLoad();</script>
+
+
 {% endblock %}
 
 {% block page_content %}
-<form name="contactForm" id="contactForm" method="post" action="write" autocomplete="off">
-    {% csrf_token %}
-    <fieldset>
-
-        <div class="form-group">
-            {{form.title}}
+<div class="s-content content">
+<main class="row content__page">
+<div id="respond">
+    <div class="column large-12 comment-respond">
+        <div class="column" id="content">
+            <form  method="post" action='' enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p  }}
+                <input class="button" type="submit" value="Save">
+            </form>
         </div>
-
-        <div class="form-field">
-            {{form.body}}
-        </div>
-
-        <div class="message form-field">
-            {{form.image}}
-        </div>
-        <div class="message form-field">
-                {{form.categories}}
-        </div>
-
-        <input name="submit" id="submit" class="btn btn--primary btn-wide btn--large full-width" value="Submit" type="submit">
-
-    </fieldset>
- </form> 
+</div>
+</div>
+</main>
+</div>
 {% endblock %}
