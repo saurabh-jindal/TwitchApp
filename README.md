@@ -1,7 +1,7 @@
 # Blogging_app
 * Django medium level app
 * Many to go
-* Remained: small text change, host 
+* Finally converted my Django app in PWA.
 
 
 ## Steps to run django server:

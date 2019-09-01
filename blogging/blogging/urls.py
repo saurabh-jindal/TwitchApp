@@ -18,14 +18,16 @@ from django.urls import path,include
 from django.conf.urls import url
 import tinymce
 from . import  settings
+
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
+    path('', include('blog.urls')),
+    path('', include('pwa.urls'))
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

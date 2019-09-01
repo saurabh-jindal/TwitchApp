@@ -1,13 +1,14 @@
 {% load static %}
+{% load pwa %}
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
+    {% progressive_web_app_meta %}
 
     {% block page_blog %}
     {% endblock %}
 
-
-    ================================================== -->
+    
     <meta charset="utf-8">
     <title>Typerite</title>
     <meta name="description" content="">
@@ -35,6 +36,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'site.webmanifest' %}">
+    <script src="../../static/js/serviceworker.js"></script>
 
 </head>
 
@@ -117,7 +119,14 @@
         {% block page_content %}
         {% endblock %}
 
-
+        <div id="content" class="container">
+                <br><br><br>
+                {% block content %}
+    
+                {% endblock %}
+                <div id="offlinedata">
+                    <!-- the news will get displayed here from indexedDB in offline mode -->
+                </div>
         <!-- footer
         ================================================== -->
         <footer class="s-footer">
@@ -137,8 +146,8 @@
 
     </div> <!-- end s-wrap -->
 
-
-    
+    <script type="text/javascript" src="{% static 'js/idb.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/idbop.js' %}"></script>
     <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'js/plugins.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>

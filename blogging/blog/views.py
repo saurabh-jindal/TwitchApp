@@ -1,6 +1,10 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from blog.models import *
 from .forms import CommentForm, ContactForm, BlogForm
+import json
+from django.core import serializers
+
 
 # Create your views here.
 def index(request):
@@ -85,3 +89,8 @@ def blog(request):
         "form":form
     }
     return render(request,'blog.html', context)
+
+def getdata(request):
+    posts = Post.objects.all().order_by('-created_on')
+    jsondata = serializers.serialize('json',posts)
+    return HttpResponse(jsondata)

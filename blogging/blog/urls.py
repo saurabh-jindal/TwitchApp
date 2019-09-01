@@ -8,4 +8,5 @@ urlpatterns = [
     path('<category>/', views.blog_categories, name="category"),
     path('about_us', views.about, name ="about"),
     path("contact", views.contact,name="contact"),
+    path('getdata', views.getdata,name="getdata")
 ]
