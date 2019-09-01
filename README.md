@@ -1,4 +1,4 @@
-# Blogging_app
+# TwitchApp
 * Django medium level app
 * Many to go
 
