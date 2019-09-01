@@ -1,7 +1,9 @@
 # Blogging_app
 * Django medium level app
 * Many to go
-* Finally converted my Django app in PWA.
+
+
+## Finally converted my Django app in PWA (Progressive Web App)
 
 
 ## Steps to run django server:
