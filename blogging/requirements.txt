@@ -7,6 +7,6 @@ django-tinymce==2.8.0
 django-tinymce4-lite==1.7.5
 jsmin==2.2.2
 phonenumbers==8.10.17
-Pillow==6.1.0
+Pillow==9.3.0
 pytz==2019.2
 sqlparse==0.3.0
